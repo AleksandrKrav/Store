@@ -9,7 +9,9 @@ namespace Domain.Entities
     public class Cart
     {
         private List<CartLine> lineCollection = new List<CartLine>();
+
         public IEnumerable<CartLine> Lines { get { return lineCollection; } }
+
         public void AddItem(Book book, int quantity)
         {
             CartLine line = lineCollection

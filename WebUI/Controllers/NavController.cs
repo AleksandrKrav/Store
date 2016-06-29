@@ -21,11 +21,11 @@ namespace WebUI.Controllers
             ViewBag.SelectedGenre = genre;
 
             IEnumerable<string> genres = repository.Books
-                .Select(b => b.Genre)
+                .Select(book => book.Genre)
                 .Distinct()
                 .OrderBy(x => x);
 
-            return PartialView(genres);
+            return PartialView("FlexMenu", genres);
         }
     }
 }
